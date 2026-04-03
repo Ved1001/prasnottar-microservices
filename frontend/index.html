@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Academy | Smart Testing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <section id="login-view" class="view">
+            <div class="auth-card">
+                <h1>NEXUS</h1>
+                <p>Enter your credentials to start the assessment</p>
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Student ID">
+                    <input type="password" id="password" placeholder="Access Key">
+                </div>
+                <button class="main-btn" onclick="app.login()">Authorize</button>
+            </div>
+        </section>
+
+        <section id="dashboard-view" class="view" style="display: none;">
+            <header class="top-bar">
+                <span class="logo">NEXUS.</span>
+                <div class="user-chip">ID: <span id="user-id-display">1</span></div>
+            </header>
+            
+            <main class="main-content">
+                <div id="exam-intro">
+                    <h2>Available Assessment: Java Fintech</h2>
+                    <p>10 Questions | 1 Point Each | Real-time Validation</p>
+                    <button class="start-btn" onclick="app.loadQuestions()">Start Exam Now</button>
+                </div>
+
+                <div id="quiz-area" style="display: none;">
+                    <div id="question-list">
+                        </div>
+                    <button class="submit-btn" onclick="app.submitExam()">Submit to Result Service</button>
+                </div>
+            </main>
+        </section>
+
+        <section id="result-view" class="view" style="display: none;">
+            <div class="result-card">
+                <div class="confetti">🎉</div>
+                <h2>Evaluation Complete</h2>
+                <div class="score-display">
+                    <span id="final-score">0</span><small>/10</small>
+                </div>
+                <p id="result-status">STATUS: PENDING</p>
+                <button class="reset-btn" onclick="location.reload()">Back to Home</button>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
